@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack-dev": "npx webpack --mode development"
   },
   "author": "Shouta-Kurahashi",
   "license": "ISC",
   "private": true,
   "devDependencies": {
     "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^5.0.0-beta.5",
+    "mini-css-extract-plugin": "^1.3.4",
     "style-loader": "^2.0.0",
     "webpack": "^5.15.0",
     "webpack-cli": "^4.3.1"
