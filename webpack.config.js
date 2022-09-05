@@ -4,10 +4,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
+  mode: "development",
   entry: "./src/javascripts/main.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "./javascripts/main.js",
+  },
+  devServer: {
+    static: "dist",
+    open: true,
   },
   module: {
     rules: [
@@ -28,15 +33,6 @@ module.exports = {
         generator: {
           filename: "images/[name][ext]",
         },
-        // use: [
-        //   {
-        //     loader: "file-loader",
-        //     options: {
-        //       esModule: false,
-        //       name: "images/[name].[ext]",
-        //     },
-        //   },
-        // ],
       },
       {
         test: /\.pug/,
@@ -65,6 +61,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/template/access.pug",
       filename: "access.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/template/members/taro.pug",
+      filename: "members/taro.html",
     }),
     new CleanWebpackPlugin(),
   ],
