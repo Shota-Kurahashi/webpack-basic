@@ -22,6 +22,18 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              esModule: false,
+              name: "images/[name].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -29,7 +41,7 @@ module.exports = {
       filename: "./stylesheets/main.css",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/templates/index.html",
+      template: "./src/template/index.html",
     }),
     new CleanWebpackPlugin(),
   ],
