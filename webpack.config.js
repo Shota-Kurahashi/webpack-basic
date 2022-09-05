@@ -10,10 +10,6 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     filename: "./javascripts/main.js",
   },
-  devServer: {
-    static: "dist",
-    open: true,
-  },
   module: {
     rules: [
       {
