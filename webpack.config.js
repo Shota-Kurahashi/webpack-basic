@@ -2,7 +2,6 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
   mode: "development",
@@ -11,11 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "./javascripts/main.js",
-  },
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, "./dist"),
-    },
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -45,15 +40,6 @@ module.exports = {
                 "@babel/preset-react",
               ],
             },
-          },
-        ],
-      },
-      {
-        test: /\.vue/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "vue-loader",
           },
         ],
       },
@@ -126,6 +112,5 @@ module.exports = {
       filename: "members/taro.html",
     }),
     new CleanWebpackPlugin(),
-    new VueLoaderPlugin(),
   ],
 };
