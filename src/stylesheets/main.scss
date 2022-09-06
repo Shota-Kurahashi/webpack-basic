@@ -1,6 +1,6 @@
 @use "./footer.scss";
 $text-color: orange;
-$primary-color: black;
+$primary-color: white;
 
 @mixin set-font($font-size, $font-weight) {
   font-size: $font-size;

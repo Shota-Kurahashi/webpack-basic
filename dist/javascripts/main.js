@@ -1,1 +1,2 @@
-(()=>{"use strict";console.log("webpack"),console.log("thi is module")})();
+(()=>{"use strict";console.log("webpack"),console.log("this is module")})();
+//# sourceMappingURL=main.js.map
