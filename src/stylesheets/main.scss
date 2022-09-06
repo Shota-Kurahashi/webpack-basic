@@ -1,0 +1,28 @@
+@use "./footer.scss";
+$text-color: orange;
+$primary-color: black;
+
+@mixin set-font($font-size, $font-weight) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+body {
+  color: lightblue;
+  background-color: $primary-color;
+  margin: 0;
+}
+
+.content {
+  @include set-font(20px, 400);
+  margin-top: 100px;
+  .title {
+    font-size: 24px;
+    color: $text-color;
+  }
+
+  .title-lg {
+    @extend .title;
+    font-size: 48px;
+  }
+}

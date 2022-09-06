@@ -10,16 +10,24 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     filename: "./javascripts/main.js",
   },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "./dist"),
+    },
+  },
   module: {
     rules: [
       {
-        test: /\.css/,
+        test: /\.(css|sass|scss)/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: "css-loader",
+          },
+          {
+            loader: "sass-loader",
           },
         ],
       },
